@@ -4,6 +4,7 @@ emoji: "💭"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["kubernetes", "socketio"]
 published: true
+publication_name: micin
 ---
 
 この記事は [MICIN Advent Calendar 2023](https://adventar.org/calendars/9595) の4日目の記事です。
