@@ -482,7 +482,7 @@ WebSocketなどのリアルタイム通信するアプリケーションをス�
    }
 ```
 
-`backend/index.js` を編集します。デバッグメッセージを追加します。 `init` というメッセージを送っているのはSocket.ioバグっぽい振る舞い[^1]に対するワークアラウンドです。初期ステートとして黒色をセットします。また、 `colorUpdate` メッセージを受信したら、ステートを更新します。Connection State Recoveryを有効化し、切断されても2分間はステートを保持するように設定を追加します。 `skipMiddlewares` をtrueにして、再接続時には初期化処理が実行されないようにします。 `drawing` メッセージでステートから取得した色情報を送信します。
+`backend/index.js` を編集します。デバッグメッセージを追加します。 `init` というメッセージを送っているのはSocket.ioのバグっぽい振る舞い[^1]に対するワークアラウンドです。初期ステートとして黒色をセットします。また、 `colorUpdate` メッセージを受信したら、ステートを更新します。Connection State Recoveryを有効化し、切断されても2分間はステートを保持するように設定を追加します。 `skipMiddlewares` をtrueにして、再接続時には初期化処理が実行されないようにします。 `drawing` メッセージでステートから取得した色情報を送信します。
 
 ```diff:javascript
  function onConnection(socket){
