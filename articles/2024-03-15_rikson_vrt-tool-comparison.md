@@ -40,7 +40,7 @@ VRT自体は社内の一部のリポジトリでは既に導入されていま�
 要求としては「StorybookにおけるStory単位での統合テスト」と「UIオートメーションを用いたE2Eテスト」の実現でした。
 利用用途のほとんどは前者でしたが、統合テストが整備できたら、徐々にE2Eにも広げてマニュアルテストの工数を削減したいという目論見もあります。
 
-ここで紹介挙げたツール以外にもっと知りたい方は、[awesome-regression-testing](https://github.com/mojoaxel/awesome-regression-testing)というリポジトリに関連ツールが多数紹介されています。
+ここで紹介したツール以外にもっと知りたい方は、[awesome-regression-testing](https://github.com/mojoaxel/awesome-regression-testing)というリポジトリに関連ツールが多数紹介されています。
 
 https://github.com/mojoaxel/awesome-regression-testing
 
