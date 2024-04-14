@@ -81,7 +81,7 @@ Lambda CloudではFilesystemという機能でストレージを作成するこ�
 ```yaml
 - hosts: localhost
   roles:
-    - rikuson.lambda_cloud_infra.gpu_instance:
+    - role: rikuson.lambda_cloud_infra.gpu_instance
       vars:
         api_key: XXXXXXXXX
         instance_type: gpu_1x_a10
@@ -110,7 +110,7 @@ https://github.com/rikuson/lambda-cloud-infra/blob/1.1.0/roles/gpu_instance/task
 ```yaml
 - hosts: gpu_instance
   roles:
-    - rikuson.lambda_cloud_infra.terminator:
+    - role: rikuson.lambda_cloud_infra.terminator
       vars:
         api_key: XXXXXXXXX
         file_system_mount_point: /home/ubuntu/data
