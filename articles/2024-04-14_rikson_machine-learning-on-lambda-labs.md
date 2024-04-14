@@ -93,7 +93,7 @@ Lambda CloudではFilesystemという機能でストレージを作成するこ�
 
 中身は次のようになっています。
 
-https://github.com/rikuson/lambda-cloud-infra/blob/61552148e70a7517fad0e3feb44c080bb963fff6/roles/gpu_instance/tasks/main.yml#L1-L36
+https://github.com/rikuson/lambda-cloud-infra/blob/1.1.0/roles/gpu_instance/tasks/main.yml#L1-L36
 
 まず、APIを呼び出してインスタンスを起動します。
 インスタンスがアクティブになるまで30秒ごとにリトライしています。
@@ -120,14 +120,14 @@ https://github.com/rikuson/lambda-cloud-infra/blob/61552148e70a7517fad0e3feb44c0
 
 中身は次のようになっています。
 
-https://github.com/rikuson/lambda-cloud-infra/blob/61552148e70a7517fad0e3feb44c080bb963fff6/roles/terminator/tasks/main.yml#L27-L36
+https://github.com/rikuson/lambda-cloud-infra/blob/1.1.0/roles/terminator/tasks/main.yml#L27-L36
 
 毎分crontabで監視し、出力ファイルが見つかったらサーバーを停止させます。
 atコマンドでインスタンスの最大起動時間を設定しています。
 
 terminateコマンドはシェルスクリプトで次のように定義しています。
 
-https://github.com/rikuson/lambda-cloud-infra/blob/61552148e70a7517fad0e3feb44c080bb963fff6/roles/terminator/templates/terminate.sh.j2#L1-L8
+https://github.com/rikuson/lambda-cloud-infra/blob/1.1.0/roles/terminator/templates/terminate.sh.j2#L1-L8
 
 APIを呼び出してインスタンス一覧を取得し、グローバルIPを使って自身の `INSTANCE_ID` を取得します。取得した `INSTANCE_ID` を用いて、サーバー停止用のAPIを呼び出して停止させています。
 サーバーを停止させる前に出力ファイルをFilessystemに保存しています。このとき、誤って上書きしないように `cp` コマンドにbオプションをつけています。
@@ -182,11 +182,11 @@ supervisorをインストールし、サービス設定を登録します。
 
 中身は次のようになっています。
 
-https://github.com/rikuson/lambda-cloud-infra/blob/57a3510381e137ec5bf95710da3a116f93b1b44f/roles/daemon/tasks/main.yml#L2-L37
+https://github.com/rikuson/lambda-cloud-infra/blob/1.1.0/roles/daemon/tasks/main.yml#L2-L37
 
 設定ファイルは次のようになっています。
 
-https://github.com/rikuson/lambda-cloud-infra/blob/57a3510381e137ec5bf95710da3a116f93b1b44f/roles/daemon/templates/supervisord.conf.j2#L1-L7
+https://github.com/rikuson/lambda-cloud-infra/blob/1.1.0/roles/daemon/templates/supervisord.conf.j2#L1-L7
 
 学習の進捗状況はoutput.logやerror.logを見て確認します。
 
