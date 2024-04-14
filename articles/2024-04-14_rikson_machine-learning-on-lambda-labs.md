@@ -167,7 +167,7 @@ python infer-web.py
 
 # Gradioをデーモン化
 
-supervisorをインストールし、サービス設定を登録します。
+supervisorをインストールし、設定ファイルを作成します。
 
 ```yaml
 - hosts: gpu_instance
