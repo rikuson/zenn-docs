@@ -120,7 +120,7 @@ https://github.com/rikuson/lambda-cloud-infra/blob/1.1.0/roles/gpu_instance/task
 
 中身は次のようになっています。
 
-https://github.com/rikuson/lambda-cloud-infra/blob/1.1.0/roles/terminator/tasks/main.yml#L27-L36
+https://github.com/rikuson/lambda-cloud-infra/blob/1.1.0/roles/terminator/tasks/main.yml#L21-L33
 
 毎分crontabで監視し、出力ファイルが見つかったらサーバーを停止させます。
 atコマンドでインスタンスの最大起動時間を設定しています。
