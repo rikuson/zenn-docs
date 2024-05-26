@@ -55,7 +55,7 @@ Lazygitの設定ファイルを編集しましょう。
 Macの場合、Lazygitの設定ファイルはデフォルトで `~/Library/Application\ Support/lazygit/config.yml` に存在します。自分はパスを変更して `~/.config/lazygit/config.yml` にしています。
 詳細は次のページを確認してください。
 
-https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md
+https://github.com/jesseduffield/lazygit/tree/9b152d7619327da442d733b45075e17b631775e7/docs/Config.md
 
 nvim-remote用にプリセットが用意されているので、これを用いて次のように設定ファイルを記載します。
 
