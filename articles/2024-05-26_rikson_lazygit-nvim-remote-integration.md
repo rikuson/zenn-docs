@@ -40,6 +40,8 @@ Lazygitに設定を加えることで、この問題を解決できます。
 実はNeovimにはリモート操作機能が存在します。
 実行中Neovimに対して、外部からコマンドを送信したり、特定のファイルを開くように指示を出すことができます。
 
+https://neovim.io/doc/user/remote.html
+
 次の例では左側で起動しているNeovimを、右側のシェルからインサートモードにしてHelloWorldを入力させています。
 
 [![nvim-remote](/images/rikson_lazygit-nvim-remote-integration_nvim-remote.gif)](/images/rikson_lazygit-nvim-remote-integration_nvim-remote.gif)
