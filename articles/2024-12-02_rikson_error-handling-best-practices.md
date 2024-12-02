@@ -1,5 +1,5 @@
 ---
-title: "エラー制御のベストプラクティスを考える"
+title: "TypeScriptのエラー制御のベストプラクティスを考える"
 emoji: "⚠️"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["typescript"]
@@ -81,6 +81,64 @@ try {
     showHint(getHint(e)); // Argument of type 'string | null' is not assignable to parameter of type 'string'.
   }
 ```
+
+:::message
+
+#### undefinedか、nullか
+
+JavaScriptでは「値がない」に相当する表現にnullとundefinedの2通りがあります。サバイバルTypeScriptの「[undefinedとnullの違い](https://typescriptbook.jp/reference/values-types-variables/undefined-vs-null)」では、両者を明確に使い分けるコストに対してメリットが小さいので、undefinedで統一することが推奨されています。
+
+しかし、個人的にはundefinedは「値が代入されていないため、値がない」、nullは「代入すべき値が存在しないため、値がない」と、使い分けるのを好みます。特に下記のようにundefinedを明示的に代入するような操作はundefinedをdefineしていることになり、不自然に感じます。
+
+```typescript
+const value = condition ? 1 : undefined;
+```
+
+どちらかを一方のみ使うのではなく、使い分けることで表現の幅が広がるように思います。例えば、nullableな変数に初期値を代入されたかどうかを判定したいとします。 null のみ使う場合、他の変数と組み合わせる必要があります。
+
+```typescript
+let initialized = false;
+let foo: string | null = null;
+
+function isInitialized() {
+  return initialized;
+}
+
+isInitialized(); // false: まだ初期化されていない
+
+foo = "bar";
+initialized = true;
+
+isInitialized(); // true: 初期値が代入された
+
+foo = null;
+
+isInitialized(); // true: 初期値は代入されたけど、値が削除された
+```
+
+undefinedとnullを使い分けると、1変数で表現できます。
+
+```typescript
+let foo: string | null;
+
+function isInitialized() {
+  return foo !== undefined;
+}
+
+isInitialized(); // false: まだ初期化されていない
+
+foo = "bar";
+
+isInitialized(); // true: 初期値が代入された
+
+foo = null;
+
+isInitialized(); // true: 初期値は代入されたけど、値が削除された
+```
+
+とはいえ、厳密な使い分けにコストがかかるのは間違いないので、チームで合意形成を行ってコーディング規約に則って記述するのが良いかと思います。
+
+:::
 
 ## Errorオブジェクトを投げる
 
