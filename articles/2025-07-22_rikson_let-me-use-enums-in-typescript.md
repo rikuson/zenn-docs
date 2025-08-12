@@ -14,7 +14,7 @@ enumを推奨しないという意見が多いのは知っていても、**何�
 
 # 列挙型（enum）とは
 
-enumはJavaScriptにはないTypeScript独自の構文で、定数を集合としてまとめて扱いたい時に値をネストすることができます。
+enumはJavaScriptにはないTypeScript独自の構文で、定数を集合としてまとめて扱うことができます。
 
 ```typescript
 enum Mode {
