@@ -78,7 +78,7 @@ enumを定義しておくことで、タイポによるエラーを防止でき�
 enum Mode {
   Auto = 'Auto',
   UDP = 'UDP',
-  TCP = 'TCP',  
+  TCP = 'TCP',
 }
 connect(Mode.Auto)
 ```
