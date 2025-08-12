@@ -192,7 +192,7 @@ SyntaxError [ERR_INVALID_TYPESCRIPT_SYNTAX]:   x TypeScript enum is not supporte
 
 TypeScriptの `erasableSyntaxOnly` というオプションを利用すると、これらの構文が禁止され、Node.js互換なコードを書くことができます。
 
-Node.jsの実行時に `--experimental-transform-types` フラグを付ければenumが含まれていもエラーになりませんが、実験的な機能です。
+Node.jsの実行時に `--experimental-transform-types` フラグを付ければenumが含まれていてもエラーになりませんが、実験的な機能です。
 
 ## 型の安全性に問題がある
 
