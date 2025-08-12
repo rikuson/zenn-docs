@@ -20,7 +20,7 @@ enumはJavaScriptにはないTypeScript独自の構文で、定数を集合と�
 enum Mode {
   Auto = 'Auto',
   UDP = 'UDP',
-  TCP = 'TCP',  
+  TCP = 'TCP',
 }
 const mode: Mode = Mode.Auto
 ```
