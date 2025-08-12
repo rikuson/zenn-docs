@@ -1,6 +1,6 @@
 ---
 title: "【TypeScript】enumを使ったっていいじゃないか"
-emoji: "🙇‍♂️"
+emoji: "🕺"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["typescript"]
 published: false
