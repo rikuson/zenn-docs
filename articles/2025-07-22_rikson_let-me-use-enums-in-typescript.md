@@ -3,8 +3,7 @@ title: "【TypeScript】enumを使ったっていいじゃないか"
 emoji: "🕺"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["typescript"]
-published: false
-publication_name: micin
+published: true
 ---
 
 TypeScriptで定数をどのように表現するか、というのは意外に意見が分かれるテーマです。本稿では、enumの特徴とその代替手段を整理し、何を採用すべきかを考えてみます。
